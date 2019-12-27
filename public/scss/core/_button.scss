@@ -1,0 +1,257 @@
+$btn-color-basic: #fff !default;
+$btn-margin-basic: 0.375rem !default;
+$btn-padding-y-basic: 0.84rem !default;
+$btn-padding-x-basic: 2.14rem !default;
+$btn-font-size-basic: 0.81rem !default;
+
+$btn-padding-y-large: 1rem !default;
+$btn-padding-x-large: 2.4rem !default;
+$btn-font-size-large: 0.94rem !default;
+
+$btn-padding-y-medium: 0.7rem !default;
+$btn-padding-x-medium: 1.6rem !default;
+$btn-font-size-medium: 0.7rem !default;
+
+$btn-padding-y-small: 0.5rem !default;
+$btn-padding-x-small: 1.6rem !default;
+$btn-font-size-small: 0.64rem !default;
+
+$btn-outline-padding-y-basic: 0.7rem !default;
+$btn-outline-padding-y-large: 0.88rem !default;
+$btn-outline-padding-y-medium: 0.58rem !default;
+$btn-outline-padding-y-small: 0.38rem !default;
+
+$btn-tb-padding-y: 0.3rem !default;
+$btn-tb-padding-x: 1rem !default;
+
+$btn-transition: $transition-fast;
+
+$btn-icon-basic: 0.9rem !default;
+$btn-icon-large: 1rem !default;
+$btn-icon-medium: 0.8rem !default;
+$btn-icon-small: 0.7rem !default;
+$btn-icon-margin: 0.3rem !default;
+$btn-group-margin: 0.375rem !default;
+
+@mixin hover-focus-active {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+// Button size
+@mixin button-size($padding-y, $padding-x, $font-size) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+}
+
+// Make button
+@mixin make-button($name, $color) {
+  &.btn-#{$name} {
+    color: #fff;
+    background-color: $color !important;
+    &:hover {
+      background-color: lighten($color, 2%) !important;
+    }
+    &:focus,
+    &:active {
+      box-shadow: $z-depth-1-half;
+    }
+  }
+}
+
+// Make outline button
+@mixin make-outline-button($name, $color) {
+  &.btn-outline-#{$name} {
+    color: $color !important;
+    background-color: transparent !important;
+    border: 2px solid $color !important;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color !important;
+      background-color: transparent !important;
+      border-color: lighten($color, 2%) !important;
+    }
+  }
+}
+
+// // Make gradient button
+// @mixin make-gradient-button($name, $value) {
+//   .btn {
+//     &.#{$name}-gradient {
+//       color: #fff;
+//       transition: 0.5s ease;
+//       background: linear-gradient(
+//         map-get($value, start),
+//         map-get($value, end)
+//       ) !important;
+//       &:hover,
+//       &:focus,
+//       &:active,
+//       &:active:focus &.active {
+//         background: linear-gradient(
+//           darken(map-get($value, start), 25%),
+//           darken(map-get($value, end), 25%)
+//         );
+//       }
+//     }
+//   }
+// }
+
+// Buttons
+.btn {
+  margin: $btn-margin-basic;
+  color: inherit;
+  text-transform: uppercase;
+  word-wrap: break-word;
+  white-space: normal;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0.125rem;
+  box-shadow: $z-depth-1;
+  transition: $btn-transition;
+  @include button-size(
+    $btn-padding-y-basic,
+    $btn-padding-x-basic,
+    $btn-font-size-basic
+  );
+
+  @include hover-focus-active {
+    outline: 0;
+    box-shadow: $z-depth-1-half;
+  }
+
+  //block button
+  &.btn-block {
+    margin: inherit;
+  }
+
+  // size button
+  &.btn-lg {
+    @include button-size(
+      $btn-padding-y-large,
+      $btn-padding-x-large,
+      $btn-font-size-large
+    );
+  }
+  &.btn-md {
+    @include button-size(
+      $btn-padding-y-medium,
+      $btn-padding-x-medium,
+      $btn-font-size-medium
+    );
+  }
+  &.btn-sm {
+    @include button-size(
+      $btn-padding-y-small,
+      $btn-padding-x-small,
+      $btn-font-size-small
+    );
+  }
+
+  &:disabled {
+    opacity: 0.8;
+    cursor: default;
+    @include hover-focus-active {
+      box-shadow: $z-depth-1;
+    }
+  }
+  // outline button
+  &[class*="btn-outline-"] {
+    padding-top: $btn-outline-padding-y-basic;
+    padding-bottom: $btn-outline-padding-y-basic;
+    &.btn-lg {
+      padding-top: $btn-outline-padding-y-large;
+      padding-bottom: $btn-outline-padding-y-large;
+    }
+    &.btn-md {
+      padding-top: $btn-outline-padding-y-medium;
+      padding-bottom: $btn-outline-padding-y-medium;
+    }
+    &.btn-sm {
+      padding-top: $btn-outline-padding-y-small;
+      padding-bottom: $btn-outline-padding-y-small;
+    }
+  }
+
+  // color button / color outline button
+  @each $btn_name, $color_value in $colors {
+    @include make-button($btn_name, $color_value);
+    @include make-outline-button($btn_name, $color_value);
+  }
+
+  // round button
+  &.btn-rounded {
+    border-radius: 10em;
+  }
+
+  // float button
+  &.btn-floating {
+    border-radius: 50%;
+    box-shadow: $z-depth-1-half;
+    width: 47px;
+    height: 47px;
+
+    &.floating-lg {
+      width: 61px;
+      height: 61px;
+    }
+
+    &.floating-sm {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  // plat button
+  &.btn-flat {
+    color: inherit;
+    background-color: transparent !important;
+    box-shadow: none;
+    @include hover-focus-active {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+// pulse button
+.pulse {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    transform: translate(-50%, -50%) scale(1.5);
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0;
+    z-index: -1;
+  }
+  @each $btn_name, $color_value in $colors {
+    &.pulse-#{$btn_name}::before {
+      background-color: $color_value !important;
+    }
+  }
+
+  &.pulse-open::before {
+    opacity: 1;
+    transition: $transition;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+// @each $btn_name, $color_value in $gradients {
+//   @include make-gradient-button($btn_name, $color_value);
+// }
+
+// @each $btn_name, $color_value in $social-colors {
+//   @include make-button($btn_name, $color_value);
+// }

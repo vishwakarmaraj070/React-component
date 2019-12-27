@@ -1,0 +1,27 @@
+// globle
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@import "./color";
+
+// core
+
+@import "./core/button";
+
+@import "./core/checkbox";
+
+@import "./core/notification";
+
+@import "./core/radio";
+
+@import "./core/pagination";
+
+// @import "./core/grid";
+
+@import "./core/input";
+
+// @import "./core/"

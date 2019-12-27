@@ -1,0 +1,89 @@
+// Pagination
+$pagination-padding-y: 0.5rem !default;
+$pagination-padding-x: 0.75rem !default;
+$pagination-bg: $white !default;
+$pagination-border-width: 1px !default;
+$pagination-border-radius: 0.25rem !default;
+$pagination-margin-left: -$pagination-border-width !default;
+
+$pagination-focus-box-shadow: 0, 0, 0, 0.2rem, #e5e5e5 !default;
+$pagination-focus-outline: 0 !default;
+
+@mixin list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.pagination {
+  display: flex;
+  @include list-unstyled();
+
+  .page-item {
+    &:not(:first-child) .page-link {
+      margin-left: $pagination-margin-left;
+    }
+
+    &.active .page-link {
+      z-index: 3;
+    }
+
+    &.disabled .page-link {
+      pointer-events: none;
+      cursor: no-drop;
+    }
+
+    .page-link {
+      position: relative;
+      display: block;
+      background-color: white;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      padding: $pagination-padding-y $pagination-padding-x;
+      &:hover {
+        z-index: 2;
+        text-decoration: none;
+      }
+
+      &:focus {
+        z-index: 3;
+      }
+    }
+  }
+
+  // color pagination
+  @each $name, $value in $colors {
+    &.pg-#{$name} {
+      .page-link {
+        .is-reppling {
+          background: lighten($color: $value, $amount: 20);
+        }
+        &:hover {
+          background-color: lighten($color: $value, $amount: 35);
+        }
+      }
+      .page-item {
+        &.active {
+          .page-link {
+            background-color: $value;
+            color: white;
+            border-radius: 0.15rem;
+            box-shadow: $z-depth-1;
+          }
+        }
+      }
+    }
+  }
+  // pagination circle
+  &.pagination-circle {
+    .page-link {
+      border-radius: 50%;
+      margin: 0 1px;
+    }
+    .page-item.active {
+      .page-link {
+        border-radius: 50% !important;
+      }
+    }
+  }
+}
