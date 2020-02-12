@@ -1,6 +1,6 @@
 .checkbox {
   position: relative;
-
+  margin: 0 0.7rem;
   &::before {
     content: "";
     position: absolute;
@@ -23,14 +23,20 @@
     border-left: 2px solid $white;
     border-bottom: 2px solid $white;
     transition: $transition-fast;
+    border: none;
     transform: rotate(-46deg) scale(1, 0);
+  }
+
+  &.indeterminate::after {
+    border: none;
+    border-bottom: 2px solid $white;
   }
 
   &:checked::after {
     transition-delay: 0.1s;
     transform: rotate(-46deg) scale(1, 1);
   }
-  @each $name, $value in $colors {
+  @each $name, $value in $component-colors {
     &.checkbox-#{$name} {
       &:checked::before {
         background-color: $value;
@@ -42,9 +48,7 @@
 }
 
 .ckeckbox-label {
-  margin-left: 0.7rem;
+  margin: 0rem 0.4rem;
   text-transform: capitalize;
-  margin-right: 0.7rem;
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  display: inline-block;
 }

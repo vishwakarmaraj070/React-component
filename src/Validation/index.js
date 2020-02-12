@@ -1,12 +1,6 @@
-import checkMobile from "./checkMobile";
-import { checkSTDCode, checkPhoneNumber } from "./checkPhoneNumber";
 import checkNoSpecialChar from "./checkNoSpecialChar";
 import checkExactLength from "./checkExactLength";
+import checkPattern from "./checkPattern";
+import checkOnSubmit from "./checkOnSubmit";
 
-export {
-  checkMobile,
-  checkSTDCode,
-  checkPhoneNumber,
-  checkNoSpecialChar,
-  checkExactLength
-};
+export { checkNoSpecialChar, checkExactLength, checkPattern, checkOnSubmit };

@@ -1,4 +1,4 @@
-.Ripple, .Ripple-primary, .Ripple-danger, .Ripple-warning, .Ripple-success, .Ripple-info, .Ripple-default, .Ripple-secondary, .Ripple-elegant, .Ripple-unique, .Ripple-dark-green, .Ripple-mdb-color, .Ripple-red, .Ripple-pink, .Ripple-purple, .Ripple-deep-purple, .Ripple-indigo, .Ripple-blue, .Ripple-light-blue, .Ripple-cyan, .Ripple-teal, .Ripple-green, .Ripple-light-green, .Ripple-lime, .Ripple-yellow, .Ripple-amber, .Ripple-orange, .Ripple-deep-orange, .Ripple-brown, .Ripple-grey, .Ripple-blue-grey, .Ripple-dark, .Ripple-light, .Ripple-white, .Ripple-black {
+.Ripple, .Ripple-primary, .Ripple-secondary, .Ripple-danger, .Ripple-close, .Ripple-purple {
   position: absolute;
   border-radius: 50%;
   opacity: 1;
@@ -7,278 +7,46 @@
 }
 
 .Ripple-primary {
-  background: #8ab4f8;
+  background: #8696ca;
 }
 
 .Ripple-outline-primary {
-  background: #bad3fb;
-}
-
-.Ripple-danger {
-  background: #ff828d;
-}
-
-.Ripple-outline-danger {
-  background: #ffb5bb;
-}
-
-.Ripple-warning {
-  background: #ffd580;
-}
-
-.Ripple-outline-warning {
-  background: #ffe6b3;
-}
-
-.Ripple-success {
-  background: #16ff74;
-}
-
-.Ripple-outline-success {
-  background: #49ff92;
-}
-
-.Ripple-info {
-  background: #77ceee;
-}
-
-.Ripple-outline-info {
-  background: #a4def3;
-}
-
-.Ripple-default {
-  background: #5ad9cd;
-}
-
-.Ripple-outline-default {
-  background: #83e2d9;
+  background: #919fcf;
 }
 
 .Ripple-secondary {
-  background: #ca9fdf;
+  background: #9dd7cb;
 }
 
 .Ripple-outline-secondary {
-  background: #dfc6ec;
+  background: #a8dcd0;
 }
 
-.Ripple-elegant {
-  background: #545454;
+.Ripple-danger {
+  background: #f6acac;
 }
 
-.Ripple-outline-elegant {
-  background: #6e6e6e;
+.Ripple-outline-danger {
+  background: #f8baba;
 }
 
-.Ripple-unique {
-  background: #cd1577;
+.Ripple-close {
+  background: #f6e9bb;
 }
 
-.Ripple-outline-unique {
-  background: #e92c91;
-}
-
-.Ripple-dark-green {
-  background: #56bc5b;
-}
-
-.Ripple-outline-dark-green {
-  background: #7bcb7e;
-}
-
-.Ripple-mdb-color {
-  background: #8290b0;
-}
-
-.Ripple-outline-mdb-color {
-  background: #a2acc4;
-}
-
-.Ripple-red {
-  background: #e06e6e;
-}
-
-.Ripple-outline-red {
-  background: #e99898;
-}
-
-.Ripple-pink {
-  background: #f386aa;
-}
-
-.Ripple-outline-pink {
-  background: #f8b4cb;
+.Ripple-outline-close {
+  background: #f8edc8;
 }
 
 .Ripple-purple {
-  background: #a835d8;
+  background: #cf79c9;
 }
 
 .Ripple-outline-purple {
-  background: #ba60e1;
+  background: #d384cd;
 }
 
-.Ripple-deep-purple {
-  background: #7651d0;
-}
-
-.Ripple-outline-deep-purple {
-  background: #9679db;
-}
-
-.Ripple-indigo {
-  background: #7280ce;
-}
-
-.Ripple-outline-indigo {
-  background: #98a2db;
-}
-
-.Ripple-blue {
-  background: #4e9cea;
-}
-
-.Ripple-outline-blue {
-  background: #7bb6ef;
-}
-
-.Ripple-light-blue {
-  background: #cfe1ff;
-}
-
-.Ripple-outline-light-blue {
-  background: white;
-}
-
-.Ripple-cyan {
-  background: #22e6ff;
-}
-
-.Ripple-outline-cyan {
-  background: #55ecff;
-}
-
-.Ripple-teal {
-  background: #00c6af;
-}
-
-.Ripple-outline-teal {
-  background: #00f9dc;
-}
-
-.Ripple-green {
-  background: #56bc5b;
-}
-
-.Ripple-outline-green {
-  background: #7bcb7e;
-}
-
-.Ripple-light-green {
-  background: #b0d683;
-}
-
-.Ripple-outline-light-green {
-  background: #c8e3aa;
-}
-
-.Ripple-lime {
-  background: #d2d655;
-}
-
-.Ripple-outline-lime {
-  background: #dde07e;
-}
-
-.Ripple-yellow {
-  background: #fcd778;
-}
-
-.Ripple-outline-yellow {
-  background: #fde6aa;
-}
-
-.Ripple-amber {
-  background: #ffbd4d;
-}
-
-.Ripple-outline-amber {
-  background: #ffd080;
-}
-
-.Ripple-orange {
-  background: #ffa243;
-}
-
-.Ripple-outline-orange {
-  background: #ffbb76;
-}
-
-.Ripple-deep-orange {
-  background: #ffaa90;
-}
-
-.Ripple-outline-deep-orange {
-  background: #ffd1c3;
-}
-
-.Ripple-brown {
-  background: #a57868;
-}
-
-.Ripple-outline-brown {
-  background: #b89588;
-}
-
-.Ripple-grey {
-  background: #878787;
-}
-
-.Ripple-outline-grey {
-  background: #a1a1a1;
-}
-
-.Ripple-blue-grey {
-  background: #a4b4bc;
-}
-
-.Ripple-outline-blue-grey {
-  background: #c2ccd2;
-}
-
-.Ripple-dark {
-  background: #474747;
-}
-
-.Ripple-outline-dark {
-  background: #616161;
-}
-
-.Ripple-light {
-  background: white;
-}
-
-.Ripple-outline-light {
-  background: white;
-}
-
-.Ripple-white {
-  background: white;
-}
-
-.Ripple-outline-white {
-  background: white;
-}
-
-.Ripple-black {
-  background: #262626;
-}
-
-.Ripple-outline-black {
-  background: #404040;
-}
-
-.Ripple.is-reppling, .is-reppling.Ripple-primary, .is-reppling.Ripple-danger, .is-reppling.Ripple-warning, .is-reppling.Ripple-success, .is-reppling.Ripple-info, .is-reppling.Ripple-default, .is-reppling.Ripple-secondary, .is-reppling.Ripple-elegant, .is-reppling.Ripple-unique, .is-reppling.Ripple-dark-green, .is-reppling.Ripple-mdb-color, .is-reppling.Ripple-red, .is-reppling.Ripple-pink, .is-reppling.Ripple-purple, .is-reppling.Ripple-deep-purple, .is-reppling.Ripple-indigo, .is-reppling.Ripple-blue, .is-reppling.Ripple-light-blue, .is-reppling.Ripple-cyan, .is-reppling.Ripple-teal, .is-reppling.Ripple-green, .is-reppling.Ripple-light-green, .is-reppling.Ripple-lime, .is-reppling.Ripple-yellow, .is-reppling.Ripple-amber, .is-reppling.Ripple-orange, .is-reppling.Ripple-deep-orange, .is-reppling.Ripple-brown, .is-reppling.Ripple-grey, .is-reppling.Ripple-blue-grey, .is-reppling.Ripple-dark, .is-reppling.Ripple-light, .is-reppling.Ripple-white, .is-reppling.Ripple-black {
+.Ripple.is-reppling, .is-reppling.Ripple-primary, .is-reppling.Ripple-secondary, .is-reppling.Ripple-danger, .is-reppling.Ripple-close, .is-reppling.Ripple-purple {
   -webkit-animation: ripple 0.5s linear;
           animation: ripple 0.5s linear;
 }

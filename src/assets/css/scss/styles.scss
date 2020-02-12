@@ -1,0 +1,115 @@
+// globle
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans" !important;
+}
+
+:root {
+  --dusky-blue: #44599c;
+  --greyish-teal: #4db7a0;
+  --light-periwinkle: #dce1ef;
+  --faded-blue: #5f75b9;
+  --dark-grey-blue: #2e3d6b;
+  --ice: #dbf0ec;
+  --pale-teal: #80ccbb;
+  --ocean-green: #398e7b;
+  --dark-mint: #4db76f;
+  --ice-two: #dbf0e2;
+  --maize: #eac857;
+  --pale: #f9f0d2;
+  --pastel-red: #eb4747;
+  --light-peach: #fad1d1;
+  --ugly-purple: #9e3997;
+  --very-light-purple: #f1daf0;
+  --dark: #16181d;
+  --charcoal-grey: #2c303a;
+  --gunmetal: #424857;
+  --light-blue-grey: #c5c9d3;
+  --light-periwinkle-two: #dcdfe5;
+  --pale-grey: #eeeff2;
+  --pale-grey-two: #f9fafb;
+  --white: #ffffff;
+}
+
+@import "./color";
+
+// core
+
+@import "./core/button";
+
+@import "./core/switchBtn";
+
+@import "./core/checkbox";
+
+@import "./core/notification";
+
+@import "./core/radio";
+
+@import "./core/pagination";
+
+@import "./core/input";
+
+@import "./core/modal";
+
+@import "./core/accordion";
+
+@import "./core/badge";
+
+@import "./core/dropdown";
+
+@import "./core/tab";
+
+@import "./core/dragDrop";
+
+@import "./core/editableTable";
+
+@import "./core/progressbar";
+
+@import "./core/stepper";
+
+@import "./core/alert";
+
+@import "./core/importProgress";
+
+@import "./core/captcha";
+
+@import "./core/loader";
+
+//
+@import "./core/Grid/grid-core";
+
+@import "./core/select";
+
+@import "./core/table";
+
+@import "./core//link";
+
+@import "./core/others";
+
+@import "./core/spacing";
+
+@import "./core/text_style";
+
+@import "./core/layout";
+
+@import "./core/form";
+
+@import "./core/headingicon";
+
+//
+
+pre.how-to {
+  padding: 0.5rem 0.2rem;
+  background-color: lightgoldenrodyellow;
+  margin: 0.5rem 0;
+  position: relative;
+  display: block;
+}
+
+.accordian-body,
+.dropdown-item-container {
+  background: white;
+}

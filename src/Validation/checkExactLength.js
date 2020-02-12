@@ -7,7 +7,7 @@ const checkExactLength = (value, length) => {
   } else {
     return {
       error: true,
-      msg: `need exact lenght ${length}`
+      msg: `Need exact lenght ${length}`
     };
   }
 };

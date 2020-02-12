@@ -16,6 +16,7 @@ const Button = ({
   outline,
   size,
   type,
+  iconBtn,
   rounded,
   children,
   gradient,
@@ -50,6 +51,7 @@ const Button = ({
       ? `${gradient}-gradient`
       : `btn-${color}`,
     "btn",
+    iconBtn && "icon-btn",
     pulse ? `pulse ` : "Ripple-parent",
     rounded && "btn-rounded",
     floating && "btn-floating",
@@ -90,7 +92,7 @@ const Button = ({
 };
 
 Button.defaultProps = {
-  color: "default",
+  color: "primary",
   type: "button"
 };
 
@@ -108,7 +110,8 @@ Button.propTypes = {
   type: PropTypes.string,
   outline: PropTypes.bool,
   gradient: PropTypes.string,
-  pulse: PropTypes.bool
+  pulse: PropTypes.bool,
+  iconBtn: PropTypes.bool
 };
 
 export default Button;

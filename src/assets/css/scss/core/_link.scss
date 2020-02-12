@@ -1,0 +1,56 @@
+.anchore-link {
+  font-family: OpenSans;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.37px;
+  color: $dusky-blue;
+  &:hover {
+    transition: 0.16s ease-in-out;
+    color: darken($color: $dusky-blue, $amount: 50);
+  }
+  &:active,
+  &.a-active {
+    color: darken($color: $dusky-blue, $amount: 50);
+  }
+  // &:visited {
+  //   color: green;
+  // }
+}
+
+// router links
+.nav-link {
+  font-family: OpenSans;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  text-decoration: none;
+  line-height: normal;
+  letter-spacing: 0.4px;
+}
+
+// arrow link
+.arrow-link {
+  background-color: $dusky-blue;
+  color: $white;
+  width: max-content;
+  padding: 1.3rem 4rem;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.4px;
+  box-shadow: 3px 0 4px 0 rgba(50, 69, 137, 0.21);
+  border-right: 2px solid $light-blue-grey;
+  text-decoration: none;
+  &:hover {
+    transition: 0.16s ease-in-out;
+    background-color: darken($color: $dusky-blue, $amount: 10);
+    color: lighten($color: $white, $amount: 40);
+  }
+}

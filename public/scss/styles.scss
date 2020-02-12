@@ -6,6 +6,10 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+:root {
+  font-size: 16px;
+}
+
 @import "./color";
 
 // core
@@ -20,8 +24,20 @@
 
 @import "./core/pagination";
 
-// @import "./core/grid";
-
 @import "./core/input";
 
-// @import "./core/"
+@import "./core/modal";
+
+@import "./core/accordion";
+
+@import "./core/badge";
+
+@import "./core/dropdown";
+
+@import "./core/tab";
+
+@import "./core/grid";
+
+@import "./core/table";
+
+@import "./core/dragDrop";

@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel&display=swap");
+.r-captcha {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: max-content;
+  background-color: $light-periwinkle;
+
+  .captcha-lebel {
+    font-size: 12px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    color: $dusky-blue;
+  }
+
+  .captcha-container {
+    display: flex;
+    width: 100%;
+    margin: 0.4rem 0 0.6rem;
+
+    .captcha-char {
+      width: 249px;
+      font-family: "Cinzel", serif !important;
+      height: 74px;
+      border-radius: 5px;
+      background-color: $white;
+      font-size: 2rem;
+      display: flex;
+      text-transform: uppercase;
+      justify-content: center;
+      align-items: center;
+      background-blend-mode: overlay;
+      transition: $transition;
+      span {
+        font-family: "Cinzel", serif !important;
+        margin: 0;
+        position: relative;
+        color: lightslategray;
+        padding: 0.2rem;
+      }
+
+      span:nth-child(odd) {
+        transform: rotate(-30deg);
+        top: -5px;
+      }
+      span:nth-child(even) {
+        transform: rotate(30deg);
+        top: 5px;
+      }
+      span:nth-child(3n) {
+        transform: rotate(-50deg);
+        top: 0px;
+      }
+    }
+
+    .captcha-sound {
+      display: flex;
+      padding-left: 0.5rem;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      svg {
+        cursor: pointer;
+
+        &:hover {
+          transition: $transition;
+          fill: $greyish-teal;
+        }
+
+        &.redo-anim {
+          transform-origin: center;
+          animation: redoAnimation 0.16s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .captcha-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    color: $dusky-blue;
+
+    input {
+      width: 193px;
+      height: 24px;
+      border-radius: 5px;
+      background-color: var(--white);
+      border: none;
+      outline: none;
+      font-size: 12px;
+      font-weight: 600;
+      font-stretch: normal;
+      letter-spacing: 12px;
+      text-transform: uppercase;
+      padding: 4px 1rem;
+    }
+  }
+
+  .captch-action {
+    text-align: right;
+    margin-top: 4px;
+  }
+
+  @each $name, $value in $component-colors {
+    &.captcha-#{$name} {
+      .captcha-char {
+        @if $name == "primary" {
+          background-color: lighten($color: $value, $amount: 45);
+        }
+        @if $name == "secondary" {
+          background-color: lighten($color: $value, $amount: 35);
+        }
+        @if $name == "danger" {
+          background-color: lighten($color: $value, $amount: 33);
+        }
+        @if $name == "close" {
+          background-color: lighten($color: $value, $amount: 25);
+        }
+        @if $name == "purple" {
+          background-color: lighten($color: $value, $amount: 46);
+        }
+        span {
+          color: $value;
+        }
+      }
+    }
+  }
+}
+
+@keyframes redoAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(80deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

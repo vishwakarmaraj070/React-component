@@ -1,0 +1,82 @@
+.checkbox {
+  position: relative;
+  margin-right: 1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    transition: $transition-fast;
+    background-color: #e5e5e5;
+  }
+
+  &.small::before {
+    width: 13px;
+    height: 13px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 8px;
+    height: 4px;
+    border-left: 2px solid $white;
+    border-bottom: 2px solid $white;
+    transition: $transition-fast;
+    transform: rotate(-46deg) scale(1, 0);
+  }
+
+  &.small::after {
+    top: 4px;
+    width: 5px;
+    height: 2px;
+  }
+
+  &:checked::after {
+    transition-delay: 0.1s;
+    transform: rotate(-46deg) scale(1, 1);
+  }
+
+  &.indeterminate::after {
+    border: none;
+    left: 4px;
+    border-bottom: 2px solid $white;
+    transform: rotate(0deg) scale(0, 1);
+  }
+
+  &.indeterminate:checked::after {
+    transition-delay: 0.1s;
+    transform: rotate(0deg) scale(1, 1);
+  }
+
+  &.left-label {
+    margin-right: auto;
+    margin-left: 1rem;
+  }
+
+  @each $name, $value in $component-colors {
+    &.checkbox-#{$name} {
+      &:checked::before {
+        background-color: $value;
+        box-shadow: 0 0 0 1px lighten($color: $value, $amount: 30),
+          0 0 2px white, 0 0 5px $value;
+      }
+    }
+  }
+}
+
+.ckeckbox-label {
+  margin: 0.5rem 1rem 0.5rem 0rem;
+  text-transform: capitalize;
+  display: inline-block;
+  &.small {
+    display: inline-flex;
+    align-items: center;
+  }
+}

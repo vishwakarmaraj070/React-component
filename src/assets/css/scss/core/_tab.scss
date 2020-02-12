@@ -1,0 +1,100 @@
+$tab-padding: 0.63rem 1.4rem !default;
+
+.tabs {
+  margin: 0.5rem 0;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  .tab {
+    position: relative;
+    &:first-child::after {
+      display: none;
+    }
+    &:last-child::before {
+      display: none;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      width: 1px;
+      height: calc(100% - 18px);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      right: -1px;
+      left: auto;
+      z-index: 2;
+    }
+
+    a {
+      position: relative;
+      border-radius: 5px 5px 0 0;
+      font-size: 0.83rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+      text-decoration: none;
+      cursor: pointer;
+      transition: $transition;
+      display: flex;
+      align-items: center;
+      padding: $tab-padding;
+      border-radius: 5px 5px 0 0;
+      text-decoration: none;
+      color: inherit;
+      transition: $transition;
+
+      svg,
+      i {
+        margin-right: 1.2rem;
+      }
+    }
+  }
+  @each $name, $value in $component-colors {
+    &.tab-#{$name} {
+      .tab {
+        &::after,
+        &::before {
+          background-color: $value;
+        }
+
+        a {
+          color: $value;
+          border-bottom: 1px solid $value;
+          svg,
+          i {
+            color: $value;
+            fill: $value;
+          }
+
+          &.active {
+            background-color: $value;
+            color: $white;
+            svg,
+            i {
+              color: $white;
+              fill: $white;
+            }
+            &:hover {
+              background-color: darken($color: $value, $amount: 8);
+              color: $white;
+            }
+            &::before {
+              background-color: $white;
+            }
+          }
+          &:hover {
+            background-color: lighten($color: $value, $amount: 35);
+            color: darken($color: $value, $amount: 10);
+            border-radius: 5px 5px 0 0;
+          }
+        }
+      }
+    }
+  }
+}

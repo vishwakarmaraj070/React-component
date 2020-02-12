@@ -1,0 +1,85 @@
+.r-import-progress {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: $z-depth-1;
+
+  // progressbar
+  .progressbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: $greyish-teal;
+    z-index: -1;
+  }
+
+  .import-label {
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.47px;
+    color: #171a23;
+    display: flex;
+    align-items: center;
+  }
+
+  svg {
+    width: 20px;
+    margin-right: 1rem;
+    fill: $greyish-teal;
+  }
+
+  .import-details {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+
+    span {
+      display: flex;
+      margin-right: 40px;
+      margin-top: 10px;
+      align-items: center;
+    }
+  }
+
+  .import-progress {
+    margin-top: 40px;
+    margin-left: -1rem;
+    width: calc(100% + 2rem);
+  }
+
+  // color
+  @each $name, $value in $component-colors {
+    &.import-progress-#{$name} {
+      .progressbar {
+        @if $name == "primary" {
+          background-color: lighten($color: $value, $amount: 45);
+        }
+        @if $name == "secondary" {
+          background-color: lighten($color: $value, $amount: 35);
+        }
+        @if $name == "danger" {
+          background-color: lighten($color: $value, $amount: 33);
+        }
+        @if $name == "close" {
+          background-color: lighten($color: $value, $amount: 25);
+        }
+        @if $name == "purple" {
+          background-color: lighten($color: $value, $amount: 46);
+        }
+      }
+      .import-details {
+        color: $value;
+      }
+    }
+  }
+}

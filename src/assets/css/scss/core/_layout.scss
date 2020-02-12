@@ -1,0 +1,119 @@
+$align: (
+  center: center,
+  end: flex-end,
+  start: flex-start
+);
+
+.flex {
+  display: flex;
+}
+
+@each $name, $val in $align {
+  @for $i from 1 through 6 {
+    @if $i == 1 {
+      .justify-#{$name} {
+        justify-content: $val;
+      }
+    }
+    @if $i == 2 {
+      .justify-items-#{$name} {
+        justify-items: $val;
+      }
+    }
+    @if $i == 3 {
+      .justify-self-#{$name} {
+        justify-self: $val;
+      }
+    }
+
+    @if $i == 4 {
+      .align-#{$name} {
+        align-content: $val;
+      }
+    }
+    @if $i == 5 {
+      .align-items-#{$name} {
+        align-items: $val;
+      }
+    }
+    @if $i == 6 {
+      .align-self-#{$name} {
+        align-self: $val;
+      }
+    }
+  }
+}
+
+// flex justify and align
+
+$space: (
+  between: space-between,
+  evenly: space-evenly,
+  around: space-around
+);
+
+@each $item, $val in $space {
+  @for $i from 1 through 2 {
+    @if $i == 1 {
+      .justify-#{$item} {
+        justify-content: $val;
+      }
+    }
+    @if $i == 2 {
+      .align-#{$item} {
+        align-content: $val;
+      }
+    }
+  }
+}
+// flex grow
+.flex-grow-1 {
+  flex-grow: 1;
+}
+.flex-grow-2 {
+  flex-grow: 2;
+}
+.flex-grow-3 {
+  flex-grow: 3;
+}
+.flex-grow-4 {
+  flex-grow: 4;
+}
+.flex-grow-5 {
+  flex-grow: 5;
+}
+
+// extra flex
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+// flex grow shrink
+$flex: (grow, shrink);
+
+@each $item, $val in $flex {
+  @for $i from 1 through 5 {
+    @if $item == "grow" {
+      .flex-grow-#{$i} {
+        flex-grow: $i;
+      }
+    }
+    @if $item == "shrink" {
+      .flex-shrink-#{$i} {
+        flex-shrink: $i;
+      }
+    }
+  }
+}

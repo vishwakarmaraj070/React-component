@@ -1,0 +1,119 @@
+$modal-border-radius: 5px !default;
+$modal-border: 2px solid transition !default;
+$modal-background: #fff !default;
+$modal-backdrop-background: rgba(0, 0, 0, 0.5) !default;
+$modal-padding: 1rem 1.5rem !default;
+$modal-transition-delay: 0.3s !default;
+$modal-translate-position: -80px;
+$modal-position-left: 30px;
+$modal-position-right: 30px;
+$modal-position-bottom: 20px;
+$modal-position-top: 20px;
+
+// modal
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050;
+  overflow: hidden;
+  visibility: hidden;
+  // backdrop style
+  .backdrop {
+    z-index: 1040;
+    background-color: transparent;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: $transition;
+    pointer-events: none;
+  }
+
+  // dialog style
+  .modal-dialog {
+    background: $modal-background;
+    border: $modal-border;
+    border-radius: $modal-border-radius;
+    padding: $modal-padding;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 1055;
+    opacity: 0;
+    min-width: 300px;
+    width: max-content;
+    max-height: 90vh;
+    overflow-y: auto;
+    transition: $transition;
+    transition-delay: 0s;
+    pointer-events: painted !important;
+
+    // position
+    &.modal-center {
+      top: 50%;
+      left: 50%;
+      transform-origin: top;
+      transform: translate(-50%, $modal-translate-position);
+    }
+
+    &.modal-top-left {
+      top: $modal-position-top;
+      left: $modal-translate-position;
+    }
+    &.modal-top-right {
+      top: $modal-position-top;
+      right: $modal-translate-position;
+    }
+
+    &.modal-bottom-left {
+      bottom: $modal-position-bottom;
+      left: $modal-translate-position;
+    }
+    &.modal-bottom-right {
+      bottom: $modal-position-bottom;
+      right: $modal-translate-position;
+    }
+  }
+
+  // open style
+  &.open {
+    visibility: visible;
+    transition: $transition;
+    .backdrop {
+      opacity: 1;
+      background-color: $modal-backdrop-background;
+    }
+
+    .modal-dialog {
+      transition-delay: $modal-transition-delay;
+      opacity: 1;
+    }
+
+    .modal-center {
+      transform: translate(-50%, -50%);
+    }
+
+    .modal-top-left {
+      left: $modal-position-left;
+    }
+
+    .modal-top-right {
+      right: $modal-position-right;
+    }
+    .modal-bottom-left {
+      left: $modal-position-left;
+    }
+
+    .modal-bottom-right {
+      right: $modal-position-right;
+    }
+  }
+}
+.card {
+  width: max-content;
+  max-width: 95%;
+}

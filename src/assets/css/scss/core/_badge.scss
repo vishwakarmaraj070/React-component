@@ -1,0 +1,60 @@
+// DROPDOWN
+.badge {
+  border-radius: 12px;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.4375rem;
+  outline: none;
+  border: none;
+  margin: 0.2rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 600;
+  transition: $transition;
+  letter-spacing: 0.4px;
+  i {
+    padding: 0.3rem;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &.contentEditable {
+    padding: 0.1875rem 0.9375rem;
+    border-radius: 5px;
+    cursor: text;
+
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+@each $name, $value in $component-colors {
+  .badge-#{$name} {
+    @if $name == "primary" {
+      background-color: lighten($color: $value, $amount: 45);
+    }
+    @if $name == "secondary" {
+      background-color: lighten($color: $value, $amount: 35);
+    }
+    @if $name == "danger" {
+      background-color: lighten($color: $value, $amount: 33);
+    }
+    @if $name == "close" {
+      background-color: lighten($color: $value, $amount: 28);
+    }
+    @if $name == "purple" {
+      background-color: lighten($color: $value, $amount: 46);
+    }
+    color: $value;
+    &:hover,
+    &:focus,
+    &:active {
+      color: darken($color: $value, $amount: 10);
+      box-shadow: $z-depth-1;
+    }
+  }
+}

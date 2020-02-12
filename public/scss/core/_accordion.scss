@@ -1,0 +1,88 @@
+// variable
+$a-padding: 0.75rem 1rem !default;
+$a-border: 2px solid transparent !default;
+$a-border-radius: 4px !default;
+$a-font-size-header: 1rem !default;
+$a-font-size-body: 0.88rem !default;
+
+// mixing here
+@mixin hover-focus-active {
+  &:hover,
+  &:active,
+  &:focus {
+    @content;
+  }
+}
+
+//
+.accordian-container {
+  position: relative;
+  width: 100%;
+  transition: $transition;
+
+  // accordian
+  .accordian {
+    transition: $transition;
+    border-radius: $a-border-radius;
+    border: $a-border;
+    border-color: $dusky-blue;
+    margin-bottom: 0.2rem;
+
+    // accordian header
+    .accordian-header {
+      position: relative;
+      border-bottom: $a-border;
+      transition: $transition;
+      padding: $a-padding;
+      font-size: $a-font-size-header;
+      letter-spacing: 2px;
+      text-transform: capitalize;
+      cursor: pointer;
+      @include hover-focus-active {
+        box-shadow: $z-depth-1-half;
+      }
+
+      .accordian-header-backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    // accordian body
+    .accordian-body {
+      padding: 0rem 2rem;
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out, opacity 0s ease-in-out 0s;
+      font-size: $a-font-size-body;
+    }
+    //show body
+
+    &.show {
+      .accordian-header {
+        border-color: $dusky-blue;
+      }
+      .accordian-body {
+        transition: all 0.3s ease-in-out, opacity 0.3s ease-in-out 0.2s;
+        padding: 0.73rem 2rem;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    @each $color_name, $color_value in $component-colors {
+      &.accordian-#{$color_name} {
+        border-color: $color_value;
+        .accordian-header {
+          background-color: $color_value;
+          color: white;
+          border-color: $color_value;
+        }
+      }
+    }
+  }
+}

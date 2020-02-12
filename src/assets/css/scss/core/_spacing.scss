@@ -1,0 +1,33 @@
+$margin: (
+  m: margin,
+  mb: margin-bottom,
+  mt: margin-top,
+  ml: margin-left,
+  mr: margin-right
+);
+
+@each $name, $value in $margin {
+  @for $i from 1 through 8 {
+    .#{$name}-#{$i} {
+      #{$value}: 1rem * $i/2;
+    }
+  }
+}
+
+// padding
+
+$padding: (
+  p: padding,
+  pb: padding-bottom,
+  pt: padding-top,
+  pl: padding-left,
+  pr: padding-right
+);
+
+@each $name, $value in $padding {
+  @for $i from 1 through 8 {
+    .#{$name}-#{$i} {
+      #{$value}: 1rem * $i/2;
+    }
+  }
+}

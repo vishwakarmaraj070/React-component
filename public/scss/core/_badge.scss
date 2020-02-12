@@ -1,0 +1,43 @@
+// DROPDOWN
+.badge {
+  border-radius: 12px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.82rem;
+  padding: 0.26rem 0.7rem;
+  outline: none;
+  border: none;
+  margin: 0.2rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 600;
+  transition: $transition;
+  letter-spacing: 0.4px;
+  i {
+    padding: 0.3rem;
+  }
+}
+
+@each $name, $value in $component-colors {
+  .badge-#{$name} {
+    @if $name == "default" {
+      background-color: lighten($color: $value, $amount: 45);
+    }
+    @if $name == "secondary" {
+      background-color: lighten($color: $value, $amount: 35);
+    }
+    @if $name == "danger" {
+      background-color: lighten($color: $value, $amount: 33);
+    }
+    @if $name == "close" {
+      background-color: lighten($color: $value, $amount: 28);
+    }
+    @if $name == "purple" {
+      background-color: lighten($color: $value, $amount: 46);
+    }
+    color: darken($color: $value, $amount: 3);
+    &:hover {
+      color: $value;
+      box-shadow: $z-depth-1;
+    }
+  }
+}

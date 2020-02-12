@@ -1,32 +1,35 @@
 // variable
-$input-background-color: #f5f5f5 !default;
+$input-background-color: $light-periwinkle !default;
 $input-color: #343434 !default;
 $input-border: 2px solid transparent !default;
-$input-border-radius: 3px !default;
-$input-error-color: $danger-color !default;
+$input-border-radius: 5px !default;
+$input-error-color: $pastel-red !default;
 $input-hint-color: lighten(
-  $color: $default-color,
+  $color: $dusky-blue,
   $amount: 10
 ) !default;
-$input-label-color: $default-color !default;
-$input-margin-bottom: 0.7em !default;
-$input-padding: 0.95em 1.3em !default;
+$input-label-color: $dusky-blue !default;
+$input-margin-bottom: 0.7rem !default;
+$input-padding: 0.8rem 0.95rem !default;
 $input-width: 100% !default;
 $input-letter-space: 1px !default;
 $input-max-width: 600px !default;
 $input-min-width: 100px !default;
-$input-font-size: 0.9rem !default;
+$input-font-size: 0.75rem !default;
 $input-transition: 0.3s ease-in-out !default;
 // input sm
-$input-padding-sm: 0.8em 1.3em !default;
-$input-font-size-sm: 0.7rem !default;
+$input-padding-sm: 0.5rem 0.82rem !default;
+$input-font-size-sm: 0.75rem !default;
 // input lg
-$input-padding-lg: 1.15em 1.3em !default;
-$input-font-size-lg: 0.9rem !default;
+$input-padding-lg: 1rem 1.2rem !default;
+$input-font-size-lg: 0.75rem !default;
 
 ::placeholder {
-  text-transform: capitalize;
-  color: $input-color;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  color: #8b93a7;
 }
 
 // mixing here
@@ -43,198 +46,263 @@ $input-font-size-lg: 0.9rem !default;
   padding: $padding;
 }
 
-.r-form {
-  // basic input -box style
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+// basic input -box style
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+input[error],
+textarea[error] {
+  border-bottom-color: $input-error-color !important;
+
+  ~ .r-input-border {
+    background-color: transparent !important;
   }
-  .r-input-box {
-    position: relative;
-    margin-bottom: $input-margin-bottom;
-    min-width: $input-min-width;
-    // input style
-    .r-input {
-      width: $input-width;
-      color: $input-color;
-      background-color: $input-background-color;
-      border: $input-border;
-      border-radius: $input-border-radius;
-      padding: $input-padding;
-      transition: $input-transition;
-      letter-spacing: $input-letter-space;
-      font-weight: 400;
+}
+.r-address {
+  margin-bottom: 0.75rem;
+  textarea {
+    &.resize-none {
+      resize: none;
+    }
+    &.resize-vertical {
+      resize: vertical;
+    }
+    &.resize-horizontal {
+      resize: horizontal;
+    }
+    &.resize-both {
+      resize: both;
+    }
+  }
+}
+
+.search {
+  position: relative;
+
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-53%);
+    right: 10px;
+    cursor: pointer;
+    padding: 0.4rem !important;
+    z-index: 1;
+    font-size: 0.9rem;
+    opacity: 0.5;
+    margin: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.r-input-box {
+  position: relative;
+  margin-bottom: $input-margin-bottom;
+  min-width: $input-min-width;
+  // input style
+  .r-input {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    width: $input-width;
+    color: $input-color;
+    background-color: $input-background-color;
+    border: $input-border;
+    border-radius: $input-border-radius;
+    padding: $input-padding;
+    transition: $input-transition;
+    letter-spacing: $input-letter-space;
+    font-weight: 400;
+    outline: none;
+    word-wrap: normal;
+    white-space: normal;
+
+    @include hover-focus-active() {
       outline: none;
-      word-wrap: normal;
-      white-space: normal;
-      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.13);
-
-      @include hover-focus-active() {
-        outline: none;
-        box-shadow: 0 2px 1px rgba(0, 0, 0, 0.15);
-      }
+      box-shadow: 0 1px 2px rgba($color: #000000, $alpha: 0.2);
     }
+  }
 
-    // border-animation
-    .r-input-border {
-      position: relative;
-      height: 2px;
-      width: 100%;
-      background-color: $input-label-color;
-      top: 0px;
-      transition: $input-transition;
-      transform: scale(0, 1);
-      opacity: 0.5;
-      &.center {
+  // border-animation
+  .r-input-border {
+    position: relative;
+    height: 2px;
+    width: 100%;
+    background-color: $input-label-color;
+    top: -1px;
+    transition: $input-transition;
+    transform: scale(0, 1);
+    opacity: 0.5;
+    &.center {
+      transform-origin: center;
+    }
+    &.left {
+      transform-origin: left;
+    }
+    &.right {
+      transform-origin: right;
+    }
+  }
+
+  // animate border on input focus
+  .r-input {
+    &:focus {
+      // focus border style
+      + .r-input-border {
+        opacity: 1;
+      }
+      + .center {
         transform-origin: center;
+        transform: scale(1, 1);
       }
-      &.left {
+
+      + .left {
         transform-origin: left;
+        transform: scale(1, 1);
       }
-      &.right {
+
+      + .right {
         transform-origin: right;
+        transform: scale(1, 1);
       }
     }
+  }
 
-    // animate border on input focus
+  // // label style
+  // .r-label {
+  //   position: absolute;
+  //   left: 0.9rem;
+  //   color: #2bbbad;
+  //   font-size: 0.9rem;
+  //   text-transform: capitalize;
+  //   top: 15px;
+  //   z-index: 50;
+  //   transition: $input-transition;
+
+  //   &.label-fixed {
+  //     top: 0 !important;
+  //     font-size: 73% !important;
+  //   }
+  // }
+  label.label-style {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    color: $dusky-blue;
+    padding: 2px;
+    text-transform: capitalize;
+    line-height: 1;
+  }
+
+  // .r-input {
+  //   &:focus,
+  //   .label-fixed {
+  //     ~ .r-label {
+  //       top: 0;
+  //       font-size: 73%;
+  //     }
+  //   }
+  // }
+
+  // input size
+  // .input-lg {
+  //   @include input-size($input-font-size-lg, $input-padding-lg);
+
+  //   ~ .r-label {
+  //     top: 18px;
+  //   }
+
+  //   &:focus,
+  //   .label-fixed {
+  //     ~ .r-label {
+  //       top: 0;
+  //       font-size: 80%;
+  //     }
+  //   }
+  // }
+  // .input-sm {
+  //   @include input-size($input-font-size-sm, $input-padding-sm);
+  //   ~ .r-input-border {
+  //     top: 0;
+  //   }
+  //   ~ .r-label {
+  //     top: 9px;
+  //   }
+
+  //   &:focus,
+  //   .label-fixed {
+  //     ~ .r-label {
+  //       top: 0;
+  //       font-size: 65%;
+  //     }
+  //   }
+  // }
+  // floating label
+  .input-label {
+    padding-bottom: 6px !important;
+    padding-top: 17px;
+  }
+
+  .fixed-border {
+    opacity: 0.6;
+    transition: all 0.16s ease-in-out;
+    transform: scale(1, 1);
+  }
+  // no background
+  .no-bg {
+    background-color: transparent;
+  }
+
+  // lagend input
+  &.legend-input {
     .r-input {
-      &:focus {
-        // focus border style
-        + .r-input-border {
-          opacity: 1;
-        }
-        + .center {
-          transform-origin: center;
-          transform: scale(1, 1);
-        }
-
-        + .left {
-          transform-origin: left;
-          transform: scale(1, 1);
-        }
-
-        + .right {
-          transform-origin: right;
-          transform: scale(1, 1);
-        }
-      }
+      border-color: $input-label-color;
     }
 
-    // label style
-    .r-label {
-      position: absolute;
-      left: 0.9rem;
-      color: #2bbbad;
-      font-size: 0.9rem;
-      text-transform: capitalize;
-      top: 15px;
-      z-index: 50;
-      transition: $input-transition;
+    // .r-label {
+    //   ~ .r-input {
+    //     border-color: transparent;
+    //   }
+    // }
+  }
 
-      &.label-fixed {
-        top: 0 !important;
-        font-size: 73% !important;
-      }
+  &.input-msg {
+    margin-bottom: 22px;
+  }
+
+  span {
+    position: absolute;
+    font-size: 11px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    top: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    text-transform: capitalize;
+
+    &.right {
+      left: auto;
+      right: 0;
     }
+  }
 
-    .r-input {
-      &:focus,
-      .label-fixed {
-        ~ .r-label {
-          top: 0;
-          font-size: 73%;
-        }
-      }
-    }
+  .r-hint {
+    color: $input-label-color;
+    @extend span;
+  }
 
-    // input size
-    .input-lg {
-      @include input-size($input-font-size-lg, $input-padding-lg);
-
-      ~ .r-label {
-        top: 18px;
-      }
-
-      &:focus,
-      .label-fixed {
-        ~ .r-label {
-          top: 0;
-          font-size: 80%;
-        }
-      }
-    }
-    .input-sm {
-      @include input-size($input-font-size-sm, $input-padding-sm);
-      ~ .r-input-border {
-        top: 0;
-      }
-      ~ .r-label {
-        top: 9px;
-      }
-
-      &:focus,
-      .label-fixed {
-        ~ .r-label {
-          top: 0;
-          font-size: 65%;
-        }
-      }
-    }
-    // floating label
-    .input-label {
-      padding-bottom: 6px !important;
-      padding-top: 17px;
-    }
-
-    .fixed-border {
-      opacity: 0.6;
-      transition: all 0.16s ease-in-out;
-      transform: scale(1, 1);
-    }
-    // no background
-    .no-bg {
-      background-color: transparent;
-    }
-
-    // lagend input
-    &.legend-input {
-      .r-input {
-        border-color: $input-label-color;
-      }
-
-      .r-label {
-        ~ .r-input {
-          border-color: transparent;
-        }
-      }
-    }
-
-    &.input-msg {
-      margin-bottom: 22px;
-    }
-
-    span {
-      position: absolute;
-      font-size: 11px;
-      left: 0;
-      bottom: -16px;
-      text-transform: capitalize;
-
-      &.right {
-        left: auto;
-        right: 0;
-      }
-    }
-
-    .r-hint {
-      color: $input-label-color;
-      @extend span;
-    }
-
-    .r-error {
-      color: $danger-color;
-      @extend span;
-    }
+  .r-error {
+    color: $input-error-color;
+    @extend span;
   }
 }

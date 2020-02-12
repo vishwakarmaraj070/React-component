@@ -1,43 +1,9 @@
-//color
-$r-colors: () !default;
-$r-colors: map-merge(
-  (
-    "primary":     #4285f4,
-    "danger":      #ff3547,
-    "warning":     #fb3,
-    "success":     #00c851,
-    "info":        #33b5e5,
-    "default":     #2bbbad,
-    "secondary":   #a6c,
-    "elegant":     #2e2e2e,
-    "unique":      #880e4f,
-    "dark-green":  #388e3c,
-    "mdb-color":   #59698d,
-    "red":         #d32f2f,
-    "pink":        #ec407a,
-    "purple":      #7b1fa2,
-    "deep-purple": #512da8,
-    "indigo":      #3f51b5,
-    "blue":        #1976d2,
-    "light-blue":  #82b1ff,
-    "cyan":        #00bcd4,
-    "teal":        #00796b,
-    "green":       #388e3c,
-    "light-green": #8bc34a,
-    "lime":        #afb42b,
-    "yellow":      #fbc02d,
-    "amber":       #ffa000,
-    "orange":      #f57c00,
-    "deep-orange": #ff7043,
-    "brown":       #795548,
-    "grey":        #616161,
-    "blue-grey":   #78909c,
-    "dark":        #212121,
-    "light":       #e0e0e0,
-    "white":       #fff,
-    "black":       #000,
-  ),
-  $r-colors
+$component-colors: (
+  "primary": #44599c,
+  "secondary": #4db7a0,
+  "danger": #eb4747,
+  "close": #eac857,
+  "purple": #9e3997
 );
 
 .Ripple {
@@ -47,16 +13,14 @@ $r-colors: map-merge(
   transform: scale(0);
 }
 
-@each $name, $color in $r-colors {
-
+@each $name, $color in $component-colors {
   .Ripple-#{$name} {
     @extend .Ripple;
-    background: lighten($color: $color, $amount: 15)
+    background: lighten($color: $color, $amount: 22);
   }
   .Ripple-outline-#{$name} {
     background: lighten($color: $color, $amount: 25);
   }
-  
 }
 
 .Ripple.is-reppling {
@@ -75,4 +39,3 @@ $r-colors: map-merge(
     transform: scale(3);
   }
 }
-

@@ -33,7 +33,7 @@ const Notification = props => {
   );
 };
 Notification.defaultProps = {
-  color: "default",
+  color: "primary",
   position: "top-right"
 };
 

@@ -7,32 +7,47 @@ const Radio = props => {
     label,
     name,
     labelLeft,
+    radioClass,
+    small,
     labelClass,
     className,
     color,
     ...attributes
   } = props;
-  const radioClasses = classnames(`radio radio-${color}`);
+
+  //
+  const radioClasses = classnames(
+    `radio radio-${color}`,
+    {
+      [`left-label`]: labelLeft,
+      small: small
+    },
+    radioClass
+  );
+
+  const labelStyle = classnames(
+    `Small-Body-Copy-RegularSmall-body-copy-Regular-Default radio-lable`,
+    labelClass,
+    {
+      small: small
+    }
+  );
+
+  //
+  const RadioCom = () => (
+    <input name={name} type="radio" className={radioClasses} {...attributes} />
+  );
 
   return (
     <span className={className}>
-      {label && labelLeft && (
-        <label
-          className={`Small-Body-CopySmall-body-Primary radio-lable ${labelClass}`}
-        >
+      {labelLeft ? (
+        <label className={labelStyle}>
           {label}
+          <RadioCom />
         </label>
-      )}
-      <input
-        name={name}
-        type="radio"
-        className={radioClasses}
-        {...attributes}
-      />
-      {label && !labelLeft && (
-        <label
-          className={`Small-Body-CopySmall-body-Primary radio-lable ${labelClass}`}
-        >
+      ) : (
+        <label className={labelStyle}>
+          <RadioCom />
           {label}
         </label>
       )}
@@ -41,7 +56,7 @@ const Radio = props => {
 };
 
 Radio.defaultProps = {
-  color: "default"
+  color: "primary"
 };
 
 Radio.propTypes = {
@@ -49,7 +64,9 @@ Radio.propTypes = {
   name: PropTypes.string,
   labelClass: PropTypes.string,
   labelLeft: PropTypes.bool,
-  label: PropTypes.string
+  label: PropTypes.string,
+  radioClass: PropTypes.string,
+  small: PropTypes.bool
 };
 
 export default Radio;

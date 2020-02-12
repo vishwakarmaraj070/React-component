@@ -1,0 +1,28 @@
+@import "_color_constants";
+
+@each $name, $value in $color {
+  @for $i from 1 through 2 {
+    @if $i == 1 {
+      .text-#{$name} {
+        color: $value;
+      }
+    } @else {
+      .bg-#{$name} {
+        background-color: $value;
+      }
+    }
+  }
+}
+
+// extra text
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}

@@ -1,0 +1,39 @@
+$BreakPoints: (
+  xs: 360px,
+  sm: 640px,
+  md: 768px,
+  lg: 959px,
+  xl: 1200px
+);
+
+// guttor values
+$gutturspace: 8px !default;
+
+// container
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  div[class*="col-"] {
+    width: 100%;
+    // &:last-child {
+    //   margin-right: 0px !important;
+    // }
+  }
+}
+
+//   columns based on container
+@each $name, $value in $BreakPoints {
+  @for $i from 1 through 10 {
+    $width: $i * 10%;
+    .col-#{$name}-#{$i} {
+      @media (min-width: $value) {
+        width: calc(#{$width} - (#{$gutturspace * 2})) !important;
+        margin-right: $gutturspace;
+        margin-top: $gutturspace;
+        margin-bottom: $gutturspace;
+        margin-left: $gutturspace;
+      }
+    }
+  }
+}

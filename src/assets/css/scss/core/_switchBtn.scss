@@ -1,0 +1,80 @@
+.r-switch-btn {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  outline: none;
+  border: none;
+  margin-right: 0.7rem;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 10px;
+    transition: $transition-fast;
+    background-color: $pale-grey;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    transition: $transition-fast;
+    transform: translateX(0);
+    pointer-events: none;
+    background-color: $gunmetal;
+  }
+
+  &.checked::after,
+  :checked::after {
+    transform: translateX(20px);
+  }
+
+  @each $name, $value in $component-colors {
+    &.switch-btn-#{$name} {
+      @if $name == "primary" {
+        &::before {
+          background-color: lighten($color: $value, $amount: 44);
+        }
+      }
+      @if $name == "secondary" {
+        &:checked::before {
+          background-color: lighten($color: $value, $amount: 33);
+        }
+      }
+      @if $name == "danger" {
+        &:checked::before {
+          background-color: lighten($color: $value, $amount: 33);
+        }
+      }
+      @if $name == "close" {
+        &:checked::before {
+          background-color: lighten($color: $value, $amount: 26);
+        }
+      }
+      @if $name == "purple" {
+        &:checked::before {
+          background-color: lighten($color: $value, $amount: 46);
+        }
+      }
+
+      &:checked::after {
+        background-color: $value;
+      }
+    }
+  }
+}

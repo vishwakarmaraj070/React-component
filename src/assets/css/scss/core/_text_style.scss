@@ -1,0 +1,424 @@
+@font-face {
+  src: local(OpenSans-Regular),
+    url(/path/to/OpenSans-Regular.woff2) format("woff2"),
+    url(/path/to/OpenSans-Regular.woff) format("woff"),
+    url(/path/to/OpenSans-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  src: local(OpenSans-Semibold),
+    url(/path/to/OpenSans-Semibold.woff2) format("woff2"),
+    url(/path/to/OpenSans-Semibold.woff) format("woff"),
+    url(/path/to/OpenSans-Semibold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  src: local(OpenSans-SemiBold),
+    url(/path/to/OpenSans-SemiBold.woff2) format("woff2"),
+    url(/path/to/OpenSans-SemiBold.woff) format("woff"),
+    url(/path/to/OpenSans-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  src: local(OpenSans-Bold), url(/path/to/OpenSans-Bold.woff2) format("woff2"),
+    url(/path/to/OpenSans-Bold.woff) format("woff"),
+    url(/path/to/OpenSans-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+//   font basic
+.font-basic {
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+}
+//   font basic
+
+//   h1
+.h1-basic {
+  font-size: 64px;
+  font-weight: bold;
+  letter-spacing: 2.13px;
+}
+//   h1
+
+.H1-Display-TitleH1-Display-Title-White {
+  @extend .font-basic;
+  @extend .h1-basic;
+  color: var(--white);
+}
+.H1-Display-TitleH1-Display-Title-Secondary {
+  @extend .font-basic;
+  @extend .h1-basic;
+  color: var(--greyish-teal);
+}
+.H1-Display-TitleH1-Display-Title-Primary {
+  @extend .font-basic;
+  @extend .h1-basic;
+  color: var(--dusky-blue);
+}
+.H1-Display-TitleH1-Display-Title-Disabled {
+  @extend .font-basic;
+  @extend .h1-basic;
+  color: var(--light-blue-grey);
+}
+.H1-Display-TitleH1-Display-Title-Default {
+  @extend .font-basic;
+  @extend .h1-basic;
+  color: #171a23;
+}
+
+// h2
+.h2-basic {
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 1.33px;
+}
+
+.H2-Page-TitleH2-Page-Title-White {
+  @extend .font-basic;
+  @extend .h2-basic;
+  color: var(--white);
+}
+.H2-Page-TitleH2-Page-Title-Primary {
+  @extend .font-basic;
+  @extend .h2-basic;
+  color: var(--dusky-blue);
+}
+.H2-Page-TitleH2-Page-Title-Disabled {
+  @extend .font-basic;
+  @extend .h2-basic;
+  color: var(--light-blue-grey);
+}
+.H2-Page-TitleH2-Page-Title-Default {
+  @extend .font-basic;
+  @extend .h2-basic;
+  color: #161920;
+}
+.H2-Page-TitleH2-Page-Title-Secondary {
+  @extend .font-basic;
+  @extend .h2-basic;
+  color: var(--greyish-teal);
+}
+
+// h3
+.h3-basic {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.H3-Section-TitleH3-Section-Title-White {
+  @extend .font-basic;
+  @extend .h3-basic;
+  color: var(--white);
+}
+.H3-Section-TitleH3-Section-Title-Primary {
+  @extend .font-basic;
+  @extend .h3-basic;
+  color: var(--dusky-blue);
+}
+.H3-Section-TitleH3-Section-Title-Disabled {
+  @extend .font-basic;
+  @extend .h3-basic;
+  color: var(--light-blue-grey);
+}
+.H3-Section-TitleH3-Section-Title-Default {
+  @extend .font-basic;
+  @extend .h3-basic;
+  color: #161920;
+}
+.H3-Section-TitleH3-Section-Title-Secondary {
+  @extend .font-basic;
+  @extend .h3-basic;
+  color: var(--greyish-teal);
+}
+
+// h4 basic
+.h4-basic {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 0.67px;
+}
+
+.H4-Sub---Section-TitleH4-Sub--Section-Title-Style-8 {
+  @extend .font-basic;
+  @extend .h4-basic;
+  color: var(--ugly-purple);
+}
+.H4-Sub---Section-TitleH4-Sub--Section-Title-Style-7 {
+  @extend .font-basic;
+  @extend .h4-basic;
+  color: var(--pastel-red);
+}
+.H4-Sub---Section-TitleH4-Sub--Section-Title-Style-6 {
+  @extend .font-basic;
+  @extend .h4-basic;
+  color: var(--maize);
+}
+.H4-Sub---Section-TitleH4-Sub--Section-Title-White {
+  @extend .font-basic;
+  @extend .h4-basic;
+  color: var(--white);
+}
+.H4-Sub---Section-TitleH4-Sub--Section-Title-Primary {
+  @extend .font-basic;
+  @extend .h4-basic;
+  color: var(--dusky-blue);
+}
+.H4-Sub---Section-TitleH4-Sub--Section-Title-Disabled {
+  @extend .font-basic;
+  @extend .h4-basic;
+  color: var(--light-blue-grey);
+}
+.H4-Sub---Section-TitleH4-Sub--Section-Title-Default {
+  @extend .font-basic;
+  @extend .h4-basic;
+  color: #161920;
+}
+.H4-Sub---Section-TitleH4-Sub--Section-Title-Secondary {
+  @extend .font-basic;
+  @extend .h4-basic;
+  color: var(--dark-mint);
+}
+// larg body
+.large-basic {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.53px;
+}
+
+.Large-Body-Semi--BoldLarge-Body-Copy-success-green-Semi--Bold {
+  @extend .font-basic;
+  @extend .large-basic;
+  color: #57bf7a;
+}
+.Large-Body-Semi--BoldLarge-Body-Copy-White-Semi--Bold {
+  @extend .font-basic;
+  @extend .large-basic;
+  color: var(--white);
+}
+.Large-Body-Semi--BoldLarge-Body-Copy-Misc-Purple-Semi--Bold {
+  @extend .font-basic;
+  @extend .large-basic;
+  color: #a841a1;
+}
+.Large-Body-Semi--BoldLarge-Body-Copy-Error-Red-Semi--Bold {
+  @extend .font-basic;
+  @extend .large-basic;
+  color: #ee5151;
+}
+.Large-Body-Semi--BoldLarge-Body-warning-yellow-Semi--Bold {
+  @extend .font-basic;
+  @extend .large-basic;
+  color: #edcf62;
+}
+.Large-Body-Semi--BoldLarge-Body-Primary-Semi--Bold {
+  @extend .font-basic;
+  @extend .large-basic;
+  color: #4d64a6;
+}
+.Large-Body-Semi--BoldLarge-Body-Disabled-Semi--Bold {
+  @extend .font-basic;
+  @extend .large-basic;
+  color: #cccfd8;
+}
+.Large-Body-Semi--BoldLarge-Body-Default-Semi--Bold-2 {
+  @extend .font-basic;
+  @extend .large-basic;
+  color: #171a23;
+}
+.Large-Body-Semi--BoldLarge-Body-Default-Semi--Bold {
+  @extend .font-basic;
+  @extend .large-basic;
+  color: #171a23;
+}
+.Large-Body-Semi--BoldLarge-Body-Secondary-Semi--Bold {
+  @extend .font-basic;
+  @extend .large-basic;
+  color: #57bfaa;
+}
+
+// larger noral
+
+.large-normal-basic {
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0.53px;
+}
+
+.Large-Body-CopyLarge-Body-Copy-success-green {
+  @extend .font-basic;
+  @extend .large-normal-basic;
+  color: var(--dark-mint);
+}
+.Large-Body-CopyLarge-Body-Copy-White {
+  @extend .font-basic;
+  @extend .large-normal-basic;
+  color: var(--white);
+}
+.Large-Body-CopyLarge-Body-Copy-Misc-Purple {
+  @extend .font-basic;
+  @extend .large-normal-basic;
+  color: var(--ugly-purple);
+}
+.Large-Body-CopyLarge-Body-Copy-Error-Red {
+  @extend .font-basic;
+  @extend .large-normal-basic;
+  color: var(--pastel-red);
+}
+.Large-Body-CopyLarge-Body-warning-yellow {
+  @extend .font-basic;
+  @extend .large-normal-basic;
+  color: var(--maize);
+}
+.Large-Body-CopyLarge-Body-Primary {
+  @extend .font-basic;
+  @extend .large-normal-basic;
+  color: var(--dusky-blue);
+}
+.Large-Body-CopyLarge-Body-Disabled {
+  @extend .font-basic;
+  @extend .large-normal-basic;
+  color: var(--light-blue-grey);
+}
+.Large-Body-CopyLarge-Body-Default {
+  @extend .font-basic;
+  @extend .large-normal-basic;
+  color: #161920;
+}
+.Large-Body-CopyLarge-Body-Secondary {
+  @extend .font-basic;
+  @extend .large-normal-basic;
+  color: var(--greyish-teal);
+}
+.Large-Body-Semi--BoldLarge-Body-Copy-White-Semi--Bold {
+  @extend .font-basic;
+  @extend .large-normal-basic;
+  color: var(--white);
+}
+// subtitle
+.-S1-Subtitle1-Left1-Default {
+  font-size: 15px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #222b45;
+}
+// subtitle
+
+// small-basic
+.small-basic {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.Small-Body-CopySmall-body-Copy-Bold-Error-Red {
+  @extend .font-basic;
+  @extend .small-basic;
+  color: var(--pastel-red);
+}
+.Small-Body-CopySmall-body-Copy-Bold-warning-yellow {
+  @extend .font-basic;
+  @extend .small-basic;
+  color: var(--maize);
+}
+.Small-Body-CopySmall-body-Copy-Bold-success-green {
+  @extend .font-basic;
+  @extend .small-basic;
+  color: var(--dark-mint);
+}
+.Small-Body-CopySmall-body-Copy-Bold-White {
+  @extend .font-basic;
+  @extend .small-basic;
+  color: var(--white);
+}
+.Small-Body-CopySmall-body-Copy-Bold-Misc-Purple {
+  @extend .font-basic;
+  @extend .small-basic;
+  color: var(--ugly-purple);
+}
+.Small-Body-CopySmall-body-Copy-Bold-Disabled {
+  @extend .font-basic;
+  @extend .small-basic;
+  color: var(--light-blue-grey);
+}
+.Small-Body-CopySmall-body-Copy-Bold-Default {
+  @extend .font-basic;
+  @extend .small-basic;
+  color: var(--dark);
+}
+.Small-Body-CopySmall-body-Copy-Bold-Secondary {
+  @extend .font-basic;
+  @extend .small-basic;
+  color: var(--greyish-teal);
+}
+.Small-Body-CopySmall-body-Primary {
+  @extend .font-basic;
+  @extend .small-basic;
+  color: var(--dusky-blue);
+}
+
+// small basic normal
+.small-normal-basic {
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 0.4px;
+}
+
+.Small-Body-Copy-RegularSmall-body-copy-Regular-Error-Red {
+  @extend .font-basic;
+  @extend .small-normal-basic;
+  color: var(--pastel-red);
+}
+.Small-Body-Copy-RegularSmall-body-copy-Regular-warning-yellow {
+  @extend .font-basic;
+  @extend .small-normal-basic;
+  color: var(--maize);
+}
+.Small-Body-Copy-RegularSmall-body-copy-Regular-success-green {
+  @extend .font-basic;
+  @extend .small-normal-basic;
+  color: var(--dark-mint);
+}
+.Small-Body-Copy-RegularSmall-body-copy-Regular-Misc-Purple {
+  @extend .font-basic;
+  @extend .small-normal-basic;
+  color: var(--ugly-purple);
+}
+.Small-Body-Copy-RegularSmall-body-copy-Regular-Disabled-2 {
+  @extend .font-basic;
+  @extend .small-normal-basic;
+  color: var(--white);
+}
+.Small-Body-Copy-RegularSmall-body-copy-Regular-Disabled {
+  @extend .font-basic;
+  @extend .small-normal-basic;
+  color: var(--light-blue-grey);
+}
+.Small-Body-Copy-RegularSmall-body-copy-Regular-Default {
+  @extend .font-basic;
+  @extend .small-normal-basic;
+  color: var(--dark);
+}
+.Small-Body-Copy-RegularSmall-body-copy-Regular-Secondary {
+  @extend .font-basic;
+  @extend .small-normal-basic;
+  color: var(--greyish-teal);
+}
+.Small-Body-Copy-RegularSmall-body-Primary {
+  @extend .font-basic;
+  @extend .small-normal-basic;
+  color: var(--dusky-blue);
+}

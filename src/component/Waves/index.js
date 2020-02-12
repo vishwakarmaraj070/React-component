@@ -12,8 +12,29 @@ class Waves extends React.Component {
       height: 0,
       top: 0,
       left: 0,
-      cursorPos: props.cursorPos
+      cursorPos: props.cursorPos,
+      color: "primary"
     };
+  }
+
+  componentDidMount() {
+    switch (this.props.color) {
+      case "primary":
+        this.setState({ ...this.state, color: "primary" });
+        break;
+      case "secondary":
+        this.setState({ ...this.state, color: "secondary" });
+        break;
+      case "danger":
+        this.setState({ ...this.state, color: "danger" });
+        break;
+      case "close":
+        this.setState({ ...this.state, color: "close" });
+        break;
+      default:
+        this.setState({ ...this.state, color: "primary" });
+        break;
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -60,10 +81,10 @@ class Waves extends React.Component {
         data-test="waves"
         className={
           "Ripple-" +
-          this.props.color +
+          this.state.color +
           " " +
           (this.props.outline || this.props.flat || this.props.dark
-            ? "Ripple-outline-" + this.props.color + " "
+            ? "Ripple-outline-" + this.state.color + " "
             : "") +
           (this.state.animate ? "is-reppling" : "")
         }
@@ -88,7 +109,7 @@ Waves.propTypes = {
 };
 
 Waves.defaultProps = {
-  color: "default"
+  color: "primary"
 };
 
 export default Waves;

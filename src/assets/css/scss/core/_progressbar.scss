@@ -1,0 +1,52 @@
+// Progress bars
+
+$progress-height: 1rem !default;
+$progress-font-size: 0.8rem !default;
+$progress-border-radius: 3px !default;
+$progress-bar-color: $white !default;
+$progress-bar-animation-timing: 1s linear infinite !default;
+$progress-bar-transition: width 0.6s ease !default;
+
+.progress {
+  display: flex;
+  height: $progress-height;
+  overflow: hidden;
+  font-size: $progress-font-size;
+  border-radius: $progress-border-radius;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: $transition-fast;
+
+  .progress-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: $progress-bar-color;
+    text-align: center;
+    white-space: nowrap;
+    transition: $transition-fast;
+  }
+
+  @each $name, $value in $component-colors {
+    &.progress-#{$name} {
+      @if $name == "primary" {
+        background-color: lighten($color: $value, $amount: 45);
+      }
+      @if $name == "secondary" {
+        background-color: lighten($color: $value, $amount: 35);
+      }
+      @if $name == "danger" {
+        background-color: lighten($color: $value, $amount: 33);
+      }
+      @if $name == "close" {
+        background-color: lighten($color: $value, $amount: 25);
+      }
+      @if $name == "purple" {
+        background-color: lighten($color: $value, $amount: 46);
+      }
+      .progress-bar {
+        background-color: $value;
+      }
+    }
+  }
+}

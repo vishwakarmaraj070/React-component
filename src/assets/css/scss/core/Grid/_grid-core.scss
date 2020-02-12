@@ -1,0 +1,93 @@
+$enable-grid-classes: true !default;
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+// Grid columns
+$grid-columns: 12 !default;
+$grid-gutter-width: 1rem !default;
+$grid-row-columns: 6 !default;
+
+// Container padding
+$container-padding-x: $grid-gutter-width / 2 !default;
+
+@import "./grid";
+
+// @if $enable-grid-classes {
+//   // Single container class with breakpoint max-widths
+//   // .container {
+//   //   @include make-container($container-padding-x);
+//   //   @include make-container-max-widths(
+//   //     $container-max-widths,
+//   //     $grid-breakpoints
+//   //   );
+//   // }
+
+//   // // 100% wide container at all breakpoints
+//   // .container-fluid {
+//   //   @include make-container($container-padding-x);
+//   // }
+
+//   // Responsive containers that are 100% wide until a breakpoint
+//   @each $breakpoint, $container-max-width in $container-max-widths {
+//     // .container-#{$breakpoint} {
+//     //   @extend .container-fluid;
+//     // }
+
+//     @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+//       %responsive-container-#{$breakpoint} {
+//         max-width: $container-max-width;
+//       }
+
+//       @each $name, $width in $grid-breakpoints {
+//         @if ($container-max-width > $width or $breakpoint == $name) {
+//           .container#{breakpoint-infix($name, $grid-breakpoints)} {
+//             @extend %responsive-container-#{$breakpoint};
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// Row
+
+@if $enable-grid-classes {
+  .row {
+    @include make-row($grid-gutter-width);
+  }
+
+  // Remove the negative margin from default .row, then the horizontal padding
+  // from all immediate children columns (to prevent runaway style inheritance).
+  .no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+// Columns
+@if $enable-grid-classes {
+  @include make-grid-columns(
+    $grid-columns,
+    $grid-gutter-width,
+    $grid-breakpoints
+  );
+}

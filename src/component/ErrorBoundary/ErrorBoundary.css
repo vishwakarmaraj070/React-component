@@ -1,0 +1,8 @@
+.error-boundary {
+  background-color: lightpink;
+  width: 100%;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  color: red;
+  border-radius: 4px;
+}

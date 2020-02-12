@@ -1,0 +1,77 @@
+$tab-padding: 0.63rem 1.4rem !default;
+// $tab- : !default;
+// $tab- : !default;
+// $tab- : !default;
+// $tab- : !default;
+// $tab- : !default;
+// $tab- : !default;
+// $tab- : !default;
+
+.tabs {
+  margin: 0.5rem 0;
+  padding: $tab-padding;
+  position: relative;
+  .tab {
+    position: relative;
+    padding: $tab-padding;
+    border-radius: 5px 5px 0 0;
+    font-size: 0.83rem;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: $transition;
+
+    &:first-child::after {
+      display: none;
+    }
+    &:last-child::before {
+      display: none;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      width: 1px;
+      height: calc(100% - 18px);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      right: -1px;
+      left: auto;
+      z-index: 2;
+    }
+
+    @each $name, $value in $component-colors {
+      &.tab-#{$name} {
+        color: $value;
+        border-bottom: 1px solid $value;
+
+        &::after,
+        &::before {
+          background-color: $value;
+        }
+
+        &.active {
+          background-color: $value;
+          color: $white;
+          &:hover {
+            background-color: darken($color: $value, $amount: 8);
+            color: $white;
+          }
+
+          &::before {
+            background-color: $white;
+          }
+        }
+        &:hover {
+          background-color: lighten($color: $value, $amount: 35);
+          color: darken($color: $value, $amount: 10);
+        }
+      }
+    }
+  }
+}

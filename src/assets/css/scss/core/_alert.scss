@@ -1,0 +1,50 @@
+.r-alert {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  box-shadow: $z-depth-1;
+  transition: $transition-fast;
+  opacity: 0;
+  font-size: 0.85rem;
+  transform: translateY(-10px);
+  overflow: hidden;
+
+  .close {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+    svg:hover {
+      fill: white;
+    }
+
+    &:hover {
+      transition: $transition-fast;
+      background-color: $pastel-red;
+      color: white;
+      box-shadow: $z-depth-1;
+    }
+  }
+
+  &.open {
+    opacity: 1;
+    padding: 0.8rem 3.3rem 0.8rem 1.2rem;
+    transform: translateY(0);
+  }
+
+  @each $color-name, $color-value in $component-colors {
+    &.alert-#{$color-name} {
+      background-color: lighten($color: $color-value, $amount: 30);
+      color: $color-value;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.container {
+  border-radius: 25px;
+  box-shadow: inset 0 1px 3px 0 rgba(22, 53, 93, 0.16);
+  border: solid 1px rgba(151, 151, 151, 0);
+  width: max-content;
+  transition: 0.5s;
+  padding: 0 !important;
+  white-space: nowrap;
+}
+
+.dropdown {
+  border-radius: 25px;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-right: 0.7rem;
+  font-size: 1.2rem;
+}
+
+.link {
+  padding: 0.2rem 1rem;
+  font-size: 1.15rem;
+  position: relative;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #000000;
+}
+
+.active {
+  color: var(--dusky-blue);
+}

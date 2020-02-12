@@ -1,0 +1,33 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  @extend .Small-Body-Copy-RegularSmall-body-copy-Regular-Default;
+}
+
+// row
+.tr {
+  @extend .table;
+  &:nth-child(even) {
+    background-color: $pale-grey-two;
+  }
+}
+
+// column
+.td {
+  @extend .table;
+  border-right: 1px solid lightgray;
+  padding: 1rem 2.5rem;
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.th {
+  @extend .Small-Body-CopySmall-body-Copy-Bold-Default;
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  padding: 1rem 2.5rem;
+  &:last-child {
+    border-right: none;
+  }
+}

@@ -1,0 +1,38 @@
+.plancard {
+  padding: 0 2rem;
+  margin: 1rem;
+  box-shadow: 7px 11px 38px 0 var(--almost-black-8);
+  flex-wrap: wrap;
+}
+.cardname {
+  border-bottom: solid 1px var(--light-periwinkle);
+  padding: 2rem 0;
+}
+.p {
+  font-size: 10px;
+}
+.icon {
+  font-size: 14px;
+  color: var(--greyish-teal);
+}
+.pricetag {
+  font-family: OpenSans;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.67px;
+  color: var(--dusky-blue);
+}
+.annually {
+  text-align: center;
+  font-family: PingFangSC;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.4px;
+  color: #858994;
+}

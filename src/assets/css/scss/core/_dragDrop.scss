@@ -1,0 +1,117 @@
+$drop-min-height: 200px !default;
+$drop-padding: 1.5rem !default;
+$drop-border: 2px solid transparent !default;
+$drop-border-radius: 5px !default;
+$drop-color: $light-blue-grey !default;
+$drop-background: $pale-grey-two !default;
+$drop-transition: $transition !default;
+// $drop-:  !default;
+
+.r-drag-drop {
+  display: block;
+  background: $drop-background;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  min-height: $drop-min-height;
+  transition: $drop-transition;
+  padding: $drop-padding;
+  border: $drop-border;
+  color: $drop-color;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+  border-radius: $drop-border-radius;
+
+  &:hover {
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+  }
+  &.drop-over {
+    border: 2px solid $dusky-blue;
+    box-shadow: $z-depth-1;
+  }
+
+  .drop-file-container {
+    display: flex;
+    flex-wrap: wrap;
+    transition: $transition;
+    width: max-content;
+    margin: auto;
+
+    .drop-file-box {
+      transition: $transition;
+      width: 100px;
+      height: auto;
+      margin: 0.6rem;
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: $z-depth-1;
+      pointer-events: none;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: $z-depth-1-half;
+      }
+
+      .file-image {
+        transition: $transition;
+        height: 70px;
+        width: 100%;
+        background-color: lighten($color: $dusky-blue, $amount: 30);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+          width: 70%;
+        }
+      }
+
+      .file-name {
+        transition: $transition;
+        width: 100%;
+        height: auto;
+        color: $dusky-blue;
+        padding: 5px;
+        p {
+          font-size: 11px;
+          text-align: center;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .progress-wrapper {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
+  }
+
+  input {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+  }
+
+  .drop-box-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -50%);
+
+    p {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+    }
+
+    // image
+    svg {
+      width: 40px;
+      margin-top: 20px;
+      opacity: 0.3;
+    }
+  }
+}

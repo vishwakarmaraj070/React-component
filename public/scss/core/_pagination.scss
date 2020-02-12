@@ -52,7 +52,7 @@ $pagination-focus-outline: 0 !default;
   }
 
   // color pagination
-  @each $name, $value in $colors {
+  @each $name, $value in $component-colors {
     &.pg-#{$name} {
       .page-link {
         .is-reppling {

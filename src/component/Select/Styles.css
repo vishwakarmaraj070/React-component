@@ -1,0 +1,42 @@
+.animation {
+  height: var(--height) !important;
+  opacity: 1;
+}
+/* search */
+.search_container {
+  padding: 0 5px;
+  overflow: hidden;
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.search {
+  position: relative;
+  margin-top: 5px;
+  opacity: 1;
+  padding: 4px 8px;
+  border-radius: 5px;
+  background-color: var(--pale-grey);
+  border: none;
+  outline: none;
+}
+.search_icon {
+  position: absolute;
+  font-size: 1.7rem;
+  color: var(--dusky-blue);
+  top: 50%;
+  right: 6%;
+  transform: translateY(-50%);
+}
+
+.search_animation {
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.search::placeholder {
+  color: var(--dusky-blue);
+  font-weight: bold;
+}
