@@ -23,19 +23,7 @@ function App() {
     <Router>
       <div style={{ width: "70%", margin: "50px auto" }}>
         <div>
-          <PatternField
-            placeholder="pattern field"
-            pattern={Email.pattern}
-            patternMsg={Email.patternMsg}
-          />
-          <div style={{ marginBottom: "20px" }}>
-            <PINCodeField
-              value={number}
-              onChange={e => setNumber(e.target.value)}
-            />
-            <NumberField maxLength={3} />
-            <NumberField maxLength={3} />
-          </div>
+          <div style={{ marginBottom: "20px" }}></div>
 
           <div style={{ marginBottom: "20px" }}>
             <Tabs>
